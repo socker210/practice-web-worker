@@ -3,6 +3,9 @@ module.exports = {
     node: true,
     browser: true,
   },
+  parseOptions: {
+    ecmaVersion: 'es2020',
+  },
   extends: ['eslint:recommended', 'plugin:prettier/recommended'],
   overrides: [
     {
