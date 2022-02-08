@@ -1,5 +1,4 @@
-self.addEventListener('message', (e) => {
-  const arrLength = e.data
+const laggyFunc = (arrLength) => {
   const arr = new Array(arrLength)
 
   for (let i = 0; i < arr.length; i++) {
@@ -12,5 +11,13 @@ self.addEventListener('message', (e) => {
     return acc
   }, 0)
 
-  self.postMessage({ res: sum, length: arrLength })
+  return sum
+}
+
+self.addEventListener('message', (e) => {
+  const arrLength = e.data
+
+  const res = laggyFunc(arrLength)
+
+  self.postMessage({ res, length: arrLength })
 })
